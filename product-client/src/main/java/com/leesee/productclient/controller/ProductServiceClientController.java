@@ -1,7 +1,7 @@
 package com.leesee.productclient.controller;
 
+import com.leesee.entity.Product;
 import com.leesee.productclient.client.ProductServiceClient;
-import com.leesee.productclient.pojo.Product;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class ProductServiceClientController {
      * 查询所有商品
      */
     @GetMapping("/queryAllProduct")
-    public List<Product> findByProductId() {
+    public List<Product> queryAllProduct() {
         List<Product> productList = prodServiceClient.queryAllProduct();
         log.info("--------------In client queryAllProduct--------------");
         return productList;

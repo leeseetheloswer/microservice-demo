@@ -1,6 +1,7 @@
 package com.leesee.productclient.client;
 
-import com.leesee.productclient.pojo.Product;
+
+import com.leesee.entity.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,7 @@ public interface ProductServiceClient {
     @GetMapping("queryAllProduct")
     List<Product> queryAllProduct();
     @GetMapping("queryAll")
-    List<Product> queryAl();
+    List<Product> queryAll();
 
 
 

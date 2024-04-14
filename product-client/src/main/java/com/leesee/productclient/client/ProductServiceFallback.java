@@ -1,6 +1,7 @@
 package com.leesee.productclient.client;
 
-import com.leesee.productclient.pojo.Product;
+
+import com.leesee.entity.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +24,7 @@ public class ProductServiceFallback implements ProductServiceClient{
     }
 
     @Override
-    public List<Product> queryAl() {
+    public List<Product> queryAll() {
         return null;
     }
 }
