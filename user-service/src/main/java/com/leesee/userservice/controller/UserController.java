@@ -25,6 +25,7 @@ public class UserController {
 
     @GetMapping("/findByUsername/{username}")
     public User findByUsername(@PathVariable String username){
+        log.info("正在查找用户名:{}的记录",username);
         User user=userMapper.findByUsername(username);
         log.info("-------------OK /findByUsername/{username}--------------------");
         log.info("{}",user);

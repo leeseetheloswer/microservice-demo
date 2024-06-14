@@ -16,7 +16,7 @@ public interface UserMapper {
     @Select("select * from user where id=#{id} ")
     User findById(Long id);
 
-    @Select("select * from user where username =#{username}")
+    @Select("select * from user where username like #{username}")
     User findByUsername(String username);
 
     @Insert("insert into user(username,password) values (#{username},#{password})")

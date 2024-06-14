@@ -3,17 +3,21 @@ server:
 spring:
   application:
     name: product-service
-  datasource:
-    url: jdbc:mysql://localhost:3306/tb_product?characterEncoding=utf-8&useSSL=false
-    username: root
-    password: cheng123
-    driver-class-name: com.mysql.cj.jdbc.Driver
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/tb_product?characterEncoding=utf-8&useSSL=false
+#    username: root
+#    password: cheng123
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: k8s
 eureka:
   instance:
-    prefer-ip-address: false
+    prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8080/eureka
-
+#    service-url:
+#      defaultZone: http://localhost:8080/eureka
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

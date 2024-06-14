@@ -1,8 +1,11 @@
 server:
   port: 8080
 spring:
+  profiles:
+    active: dev
   application:
    name: eureka-server
+
 eureka:
   instance:
    hostname: 127.0.0.1
@@ -15,8 +18,9 @@ eureka:
    use-read-only-response-cache: false
    renewal-percent-threshold: 0.49
   client:
-   register-with-eureka: false
-   serviceUrl:
-    defaultZone:
-     http://${eureka.instance.hostname}:${server.port}/eureka/
+    register-with-eureka: false
     fetch-registry: false
+  #   serviceUrl:
+#    defaultZone:
+#     http://${eureka.instance.hostname}:${server.port}/eureka/
+

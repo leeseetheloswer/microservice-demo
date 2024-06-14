@@ -3,32 +3,47 @@ server:
 spring:
   application:
     name: gateway-service
-  cloud:
-    gateway:
-      discovery:
-       locator:
-  #开启以服务 id 去注册中心上获取转发地址
-         enabled: true
-  ##小写 serviceId
-         lower-case-service-id: true
-      routes:
-          - id: product-client
-            uri: lb://product-client
-            filters:
-              - StripPrefix=1
-            predicates:
-              - Path=/product/**
-          - id: user-client
-            uri: lb://stock-client
-            filters:
-              - StripPrefix=1
-            predicates:
-              - Path=/stock/**
-eureka:
-  instance:
-    prefer-ip-address: false
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8080/eureka
+  profiles:
+    active: dev
+#  cloud:
+#    gateway:
+#      discovery:
+#       locator:
+#  #开启以服务 id 去注册中心上获取转发地址
+#         enabled: true
+#  ##小写 serviceId
+#         lower-case-service-id: true
+#      routes:
+#          - id: product-client
+#            uri: lb://product-client
+#            filters:
+#              - StripPrefix=1
+#            predicates:
+#              - Path=/product/**
+#          - id: stock-client
+#            uri: lb://stock-client
+#            filters:
+#              - StripPrefix=1
+#            predicates:
+#              - Path=/stock/**
+##          - id: user-client
+##            uri: lb://user-client
+##            filters:
+##              - StripPrefix=1
+##            predicates:
+##              - Path=/user/**
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedHeaders: "*"
+#            allowedMethods: "*"
+#
+#eureka:
+#  instance:
+#    prefer-ip-address: false
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8080/eureka

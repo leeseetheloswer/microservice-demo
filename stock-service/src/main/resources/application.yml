@@ -1,13 +1,13 @@
 server:
-  port: 8012
+  port: 8021
 spring:
   application:
     name: stock-service
   datasource:
-    url: jdbc:mysql://localhost:3306/tb_user?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/tb_stock?characterEncoding=utf-8&useSSL=false
     username: root
     password: cheng123
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
 eureka:
   instance:
     prefer-ip-address: false
@@ -16,4 +16,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8080/eureka
-
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
